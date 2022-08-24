@@ -1,0 +1,13 @@
+<label *ngIf="labelText">{{ labelText }} </label>
+<input
+  [class]="customClass ? customClass : ''"
+  [type]="type"
+  [ngClass]="{
+    'gray-bg': grayBackGround,
+    shadow: shadow,
+    'pink-bg': pinkBackGround
+  }"
+  [placeholder]="placeholder ? placeholder : ''"
+  [disabled]="disabled"
+  [(ngModel)]="value"
+/>

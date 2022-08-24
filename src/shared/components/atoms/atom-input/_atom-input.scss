@@ -1,0 +1,39 @@
+input {
+    &.form-control {
+      height: 3rem;
+      padding: 0.9rem 1rem;
+      border: none !important;
+      border-radius: 0.625rem !important;
+      font-family: $font-family-montserrat !important;
+      color: $gray-800;
+
+      &:focus {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+      &.gray-bg {
+        background-color: grey !important;
+      }
+      &:disabled,
+      &[readonly] {
+        background-color: gray;
+        // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+        opacity: 1;
+      }
+    }
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gray-600 !important;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $gray-600 !important;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $gray-600 !important;
+  }
