@@ -9,8 +9,6 @@ export class HomeService {
   constructor(private Http: HttpClient) {}
 
   calcularResultado(expresion: string, method: method) {
-    console.log(`this.urlBase/math/expresiones`);
-
     return method == 'POST'
       ? firstValueFrom(
           this.Http.post(`${this.urlBase}/math/expresiones`, { expresion })
