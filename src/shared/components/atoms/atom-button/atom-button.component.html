@@ -1,0 +1,25 @@
+<button
+  *ngIf="status != 'loading'"
+  [ngClass]="{ shadow: shadow }"
+  [class]="class"
+  [type]="type"
+  [disabled]="status == 'disabled' ? true : false"
+  [disabled]="disabled"
+>
+  <ng-content></ng-content>
+</button>
+
+<!-- loading buttom -->
+<button
+  *ngIf="status == 'loading'"
+  style="cursor: not-allowed"
+  [class]="class"
+  [type]="type"
+  disabled
+>
+  <span
+    class="spinner-border spinner-border-sm my-1 mx-3"
+    role="status"
+    aria-hidden="true"
+  ></span>
+</button>
