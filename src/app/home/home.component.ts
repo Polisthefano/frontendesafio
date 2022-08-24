@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  /** Envia la peticion POST y carga resultado o dispara toast error */
   withPOST() {
     this.isLoading = 'POST';
     this.homeService
@@ -48,6 +49,8 @@ export class HomeComponent implements OnInit {
         this.resultado.resultadoPost = null;
       });
   }
+
+  /** Envia la peticion GET y carga resultado o dispara toast error */
   withGET() {
     this.isLoading = 'GET';
     this.homeService

@@ -10,6 +10,7 @@ export class ToastService {
     this.toastr.toastrConfig.positionClass = 'toast-bottom-left';
   }
 
+  /** dispara el toast */
   show(msg: string, error: boolean) {
     return !error ? this.toastr.success(msg) : this.toastr.error(msg);
   }
