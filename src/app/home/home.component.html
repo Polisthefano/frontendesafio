@@ -31,15 +31,20 @@
 <div class="d-flex flex-row">
   <div class="col-6 d-flex justify-content-center mt-5">
     <p
-      *ngIf="resultado.resultadoPost"
+      *ngIf="resultado.resultadoPost != null"
       class="animate__animated animate__fadeIn"
     >
-      Resultado obtenido: {{ resultado.resultadoPost }}
+      <span class="fs-5">Resultado obtenido: </span>
+      <strong>{{ resultado.resultadoPost }}</strong>
     </p>
   </div>
   <div class="col-6 d-flex justify-content-center mt-5">
-    <p *ngIf="resultado.resultadoGet" class="animate__animated animate__fadeIn">
-      Resultado obtenido: {{ resultado.resultadoGet }}
+    <p
+      *ngIf="resultado.resultadoGet != null"
+      class="animate__animated animate__fadeIn"
+    >
+      <span class="fs-5">Resultado obtenido: </span
+      ><strong> {{ resultado.resultadoGet }}</strong>
     </p>
   </div>
 </div>

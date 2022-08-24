@@ -40,7 +40,8 @@ export class HomeComponent implements OnInit {
       .calcularResultado(this.form.value.expresion, 'POST')
       .then((resp: any) => {
         this.isLoading = null;
-        this.resultado.resultadoPost = resp.resultado;
+        this.resultado.resultadoPost =
+          resp.resultado == null ? 'nulo' : resp.resultado;
       })
       .catch((err) => {
         console.error(err);
@@ -57,7 +58,8 @@ export class HomeComponent implements OnInit {
       .calcularResultado(this.form.value.expresion2, 'GET')
       .then((resp: any) => {
         this.isLoading = null;
-        this.resultado.resultadoGet = resp.resultado;
+        this.resultado.resultadoGet =
+          resp.resultado == null ? 'nulo' : resp.resultado;
       })
       .catch((err) => {
         console.error(err);
