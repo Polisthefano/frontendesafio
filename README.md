@@ -26,7 +26,7 @@ Para poder ver la librería se necesitará tener instalado Git para poder clonar
 
 ### Utilización de la UI
 
-Para utilizar la interfaz de usuario, debemos mediante clicks confeccionar la expresion que deseamos calcular, esta expresion, tambien puede ser escrita de forma manual por el usuario seleccionando en el campo que dice "Construye tu expresión". Una vez que la expresion ya esta lista, mediante el boton igual "=" se calcula y esta interfaz arroja el resultado.
+Para utilizar la interfaz de usuario, debemos mediante clicks confeccionar la expresion que deseamos calcular, esta expresion, tambien puede ser escrita de forma manual por el usuario seleccionando en el campo que dice "Construye tu expresión". Una vez que la expresion ya esta lista, mediante el boton igual "=" o presionando enter se calcula y esta interfaz muestra el resultado obtenido.
 
 ## Herramientas
 
