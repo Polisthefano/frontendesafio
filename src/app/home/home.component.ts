@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
     expresion: new FormControl('', [Validators.required]),
     expresion2: new FormControl('', [Validators.required]),
   });
+  openHistorial: boolean = false;
   constructor(
     private homeService: HomeService,
     private toastService: ToastService
@@ -115,6 +116,7 @@ export class HomeComponent implements OnInit {
         );
         break;
       case 'history':
+        this.openHistorial = true;
         break;
       case 'result':
         this.calcular();

@@ -1,0 +1,247 @@
+.theme-light {
+
+    // modal parte oscura
+    .modal-backdrop {
+        // background: rgba(33, 33, 33, 0.75);
+        background: rgba(100, 100, 100, 0.75);
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+
+        &.show {
+            opacity: 1;
+        }
+    }
+
+    .modal {
+        &.modal-template {
+            .modal-content {
+                border: 0px;
+                border-radius: 0.625rem !important;
+                width: 100%;
+                background-color: $gray-80  !important;
+
+                .modal-header {
+                    border-bottom: 0px;
+                    padding-bottom: 0px;
+                }
+
+                .modal-body {
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                }
+
+                .modal-footer {
+                    border-top: 0px;
+                }
+
+                &.gray-bg {
+                    background-color: $gray-200  !important;
+                }
+
+                &.primary {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $pink 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.secondary {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $gray-600 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.success {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $green 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.danger {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $red 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.warning {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $yellow 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.info {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $blue 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.dark {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $gray-1000 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.light {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $gray-200 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+
+                &.violet {
+                    padding-left: 1rem;
+                    background: linear-gradient(180deg, $violet 0%, $white 90%);
+
+                    .modal-header {
+                        border-top-left-radius: 0 !important;
+                        border-top-right-radius: 0.625rem !important;
+                        background-color: $gray-80;
+                        border-bottom: 0px;
+                    }
+
+                    .modal-body {
+                        background-color: $gray-80;
+                    }
+
+                    .modal-footer {
+                        background-color: $gray-80;
+                        border-bottom-left-radius: 0 !important;
+                        border-bottom-right-radius: 0.625rem !important;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 992px) {
+            .modal-md {
+                max-width: 560px;
+            }
+        }
+    }
+}

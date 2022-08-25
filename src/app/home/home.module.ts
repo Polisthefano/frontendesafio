@@ -6,6 +6,7 @@ import { AtomInputModule } from 'src/shared/components/atoms/atom-input/atom-inp
 import { ReactiveFormsModule } from '@angular/forms';
 import { AtomButtonModule } from 'src/shared/components/atoms/atom-button/atom-button.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TemplateModalModule } from 'src/shared/components/templates/template-modal/template-modal.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AtomButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    TemplateModalModule,
   ],
 })
 export class HomeModule {}

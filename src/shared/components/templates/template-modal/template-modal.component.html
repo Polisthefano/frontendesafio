@@ -1,0 +1,51 @@
+<div
+  *ngIf="showHideModal"
+  class="modal-backdrop fade show"
+  (click)="onCloseModal.emit()"
+></div>
+<div
+  *ngIf="showHideModal"
+  class="modal modal-template fade show"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="reportarPedidoModalLabel"
+  aria-hidden="true"
+  style="display: block; overflow-y: auto !important"
+>
+  <div
+    class="modal-dialog"
+    [ngClass]="{
+      'modal-dialog-centered': centered,
+      'modal-xl': modalSize == 'xl',
+      'modal-lg': modalSize == 'lg',
+      'modal-sm': modalSize == 'sm',
+      'modal-md': modalSize == 'md',
+      'modal-dialog-scrollable': scrollContent
+    }"
+  >
+    <div class="modal-content" [ngClass]="modalStyle">
+      <div [class]="'modal-header ' + classHeader" *ngIf="showHeader">
+        <ng-content select="[header]"></ng-content>
+        <button
+          *ngIf="showDismiss"
+          (click)="onCloseModal.emit()"
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="ri-close-line cp"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ng-content select="[body]"></ng-content>
+      </div>
+      <div
+        [class]="'modal-footer ' + classFooter"
+        [ngClass]="{ 'border-top': showBorderTopFooter }"
+      >
+        <ng-content select="[footer]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

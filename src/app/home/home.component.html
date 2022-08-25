@@ -132,3 +132,36 @@
     </div>
   </div>
 </div>
+<template-modal
+  (onCloseModal)="(false)"
+  [showHideModal]="openHistorial"
+  [showDismiss]="false"
+  [centered]="true"
+  [modalSize]="'lg'"
+  [scrollContent]="false"
+  [classHeader]="'d-flex justify-content-center'"
+  classFooter="d-flex justify-content-center"
+>
+  <h3 header class="text-center">Historial de calculos</h3>
+  <div class="mb-3 mt-3" body>
+    <ng-container *ngIf="historial.length > 0; else ELSE">
+      <h4 *ngFor="let busqueda of historial; let i = index">
+        Expresion calculada numero {{ i + 1 }}:
+        <span class="ms-2" style="font-weight: bold">{{ busqueda }}</span>
+      </h4>
+    </ng-container>
+    <ng-template #ELSE>
+      <h6 class="text-center">
+        No has realizado ningun calculo por el momento..
+      </h6>
+    </ng-template>
+  </div>
+  <div class="my-3 text-center" footer>
+    <atom-button
+      [outline]="true"
+      className="fs-5"
+      (click)="openHistorial = false"
+      >Cerrar</atom-button
+    >
+  </div>
+</template-modal>
