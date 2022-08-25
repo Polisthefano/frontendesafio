@@ -1,3 +1,7 @@
 .cp{
   cursor: pointer;
 }
+.spin{
+  -webkit-animation: rotate-center 1000ms linear infinite both;
+	        animation: rotate-center 1000ms linear infinite both;
+}

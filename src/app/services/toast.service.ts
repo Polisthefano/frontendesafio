@@ -11,7 +11,9 @@ export class ToastService {
   }
 
   /** dispara el toast */
-  show(msg: string, error: boolean) {
-    return !error ? this.toastr.success(msg) : this.toastr.error(msg);
+  show(msg: string, error: boolean, tittle?: string) {
+    return !error
+      ? this.toastr.success(msg, tittle)
+      : this.toastr.error(msg, tittle);
   }
 }

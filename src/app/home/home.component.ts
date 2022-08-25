@@ -29,12 +29,13 @@ export class HomeComponent implements OnInit {
     { class: 'ri-checkbox-blank-circle-fill  ri-1x', value: '.' },
     { class: 'ri-number-0  ri-1x', value: '0' },
     { class: 'ri-history-line  ri-1x', value: 'history' },
-    { class: 'ri-calculator-line  ri-1x', value: 'result' },
+    // { class: 'ri-calculator-line  ri-1x', value: 'result' },
   ];
-  resultado: { resultadoPost: number | null; resultadoGet: number | null } = {
-    resultadoPost: null,
-    resultadoGet: null,
+  resultado: { Post: number | null; Get: number | null } = {
+    Post: null,
+    Get: null,
   };
+  historial: string[] = [];
   isLoading: method | null = null;
   form: FormGroup = new FormGroup({
     expresion: new FormControl('', [Validators.required]),
@@ -45,7 +46,9 @@ export class HomeComponent implements OnInit {
     private toastService: ToastService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.resultado);
+  }
 
   calcular() {
     if (this.expresion?.valid) {
@@ -61,14 +64,18 @@ export class HomeComponent implements OnInit {
       .calcularResultado(this.form.value.expresion, 'POST')
       .then((resp: any) => {
         this.isLoading = null;
-        this.resultado.resultadoPost =
-          resp.resultado == null ? 'nulo' : resp.resultado;
+        this.resultado.Post = resp.resultado == null ? 'nulo' : resp.resultado;
+        this.cargarHistorial();
       })
       .catch((err) => {
         console.error(err);
         this.isLoading = null;
-        this.toastService.show(err.error.msg, true);
-        this.resultado.resultadoPost = null;
+        this.toastService.show(
+          err.error.msg,
+          true,
+          'Error en la peticion POST'
+        );
+        this.resultado.Post = null;
       });
   }
 
@@ -79,14 +86,14 @@ export class HomeComponent implements OnInit {
       .calcularResultado(this.form.value.expresion, 'GET')
       .then((resp: any) => {
         this.isLoading = null;
-        this.resultado.resultadoGet =
-          resp.resultado == null ? 'nulo' : resp.resultado;
+        this.resultado.Get = resp.resultado == null ? 'nulo' : resp.resultado;
+        this.cargarHistorial();
       })
       .catch((err) => {
         console.error(err);
         this.isLoading = null;
-        this.toastService.show(err.error.msg, true);
-        this.resultado.resultadoGet = null;
+        this.toastService.show(err.error.msg, true, 'Error en la peticion GET');
+        this.resultado.Get = null;
       });
   }
 
@@ -114,6 +121,11 @@ export class HomeComponent implements OnInit {
         break;
       default:
         this.expresion?.setValue(expresionActual + data.value);
+    }
+  }
+  cargarHistorial() {
+    if (!this.historial.includes(this.expresion?.value)) {
+      this.historial.push(this.expresion?.value);
     }
   }
 }
