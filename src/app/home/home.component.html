@@ -5,70 +5,7 @@
     <h2>Desafio Slingr Expresiones</h2>
   </div>
 </div>
-<!-- <div
-  class="d-flex flex-row justify-content-center mt-5 animate__animated animate__fadeInDown"
-  [formGroup]="form"
->
-  <div class="col-6 d-flex justify-content-center">
-    <atom-input
-      labelText="Expresion con metodo POST"
-      placeholder="Ingrese una expresion matematica"
-      type="text"
-      formControlName="expresion"
-      [disabled]="isLoading == 'POST'"
-    ></atom-input>
-  </div>
-  <div class="col-6 d-flex justify-content-center">
-    <atom-input
-      labelText="Expresion con metodo GET"
-      placeholder="Ingrese una expresion matematica"
-      type="text"
-      formControlName="expresion2"
-      [disabled]="isLoading == 'GET'"
-    ></atom-input>
-  </div>
-</div>
-<div class="d-flex flex-row">
-  <div class="col-6 d-flex justify-content-center mt-5">
-    <p
-      *ngIf="resultado.resultadoPost != null"
-      class="animate__animated animate__fadeIn"
-    >
-      <span class="fs-5">Resultado obtenido: </span>
-      <strong>{{ resultado.resultadoPost }}</strong>
-    </p>
-  </div>
-  <div class="col-6 d-flex justify-content-center mt-5">
-    <p
-      *ngIf="resultado.resultadoGet != null"
-      class="animate__animated animate__fadeIn"
-    >
-      <span class="fs-5">Resultado obtenido: </span
-      ><strong> {{ resultado.resultadoGet }}</strong>
-    </p>
-  </div>
-</div>
-<div class="d-flex flex-row animate__animated animate__fadeInDown">
-  <div class="col-6 d-flex justify-content-center mt-5">
-    <atom-button
-      [disabled]="expresion?.invalid"
-      [outline]="true"
-      (click)="calcular(true)"
-      [status]="isLoading == 'POST' ? 'loading' : ''"
-    >
-      Calcular peticionando con POST <i class="ri-calculator-line ms-1"></i
-    ></atom-button>
-  </div>
-  <div class="col-6 d-flex justify-content-center mt-5">
-    <atom-button
-      [disabled]="expresion2?.invalid"
-      [outline]="true"
-      (click)="calcular(false)"
-      [status]="isLoading == 'GET' ? 'loading' : ''"
-      >Calcular peticionando con GET <i class="ri-calculator-line ms-1"></i
-    ></atom-button>
-  </div>
-</div> -->
+
 <div class="container-fluid mt-5 shadow" [formGroup]="form">
   <div class="col-12 d-flex justify-content-center">
     <atom-input
@@ -108,7 +45,7 @@
     </div>
   </div>
 
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row" *ngIf="!isLoading">
     <div class="col-6 d-flex justify-content-center mt-5">
       <p
         *ngIf="resultado.Post != null"
@@ -127,11 +64,14 @@
         ><strong> {{ resultado.Get }}</strong>
       </p>
     </div>
-    <div class="col-12 mt-5">
+  </div>
+  <div class="row" *ngIf="isLoading">
+    <div class="col-12 mb-3 d-flex justify-content-center">
       <div class="spinner-border" role="status"></div>
     </div>
   </div>
 </div>
+<!-- modal de historial -->
 <template-modal
   (onCloseModal)="(false)"
   [showHideModal]="openHistorial"

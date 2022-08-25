@@ -47,9 +47,7 @@ export class HomeComponent implements OnInit {
     private toastService: ToastService
   ) {}
 
-  ngOnInit(): void {
-    console.log(this.resultado);
-  }
+  ngOnInit(): void {}
 
   calcular() {
     if (this.expresion?.valid) {
