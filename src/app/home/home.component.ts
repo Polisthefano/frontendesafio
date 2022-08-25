@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     { class: 'ri-number-7  ri-1x', value: '7' },
     { class: 'ri-number-8  ri-1x', value: '8' },
     { class: 'ri-number-9  ri-1x', value: '9' },
-    { class: 'ri-close-line ri-1x', value: 'x' },
+    { class: 'ri-close-line ri-1x', value: '*' },
     { class: 'ri-number-4  ri-1x', value: '4' },
     { class: 'ri-number-5  ri-1x', value: '5' },
     { class: 'ri-number-6  ri-1x', value: '6' },
@@ -47,10 +47,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  calcular(POST: boolean) {
-    if (POST && this.expresion?.valid) {
+  calcular() {
+    if (this.expresion?.valid) {
       this.withPOST();
-    } else if (!POST && this.expresion2?.valid) {
       this.withGET();
     }
   }
@@ -77,7 +76,7 @@ export class HomeComponent implements OnInit {
   withGET() {
     this.isLoading = 'GET';
     this.homeService
-      .calcularResultado(this.form.value.expresion2, 'GET')
+      .calcularResultado(this.form.value.expresion, 'GET')
       .then((resp: any) => {
         this.isLoading = null;
         this.resultado.resultadoGet =
@@ -111,11 +110,10 @@ export class HomeComponent implements OnInit {
       case 'history':
         break;
       case 'result':
-        this.calcular(true);
+        this.calcular();
         break;
       default:
         this.expresion?.setValue(expresionActual + data.value);
     }
-    console.log(this.expresion?.value);
   }
 }
