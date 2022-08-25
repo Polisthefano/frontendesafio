@@ -69,7 +69,7 @@
     ></atom-button>
   </div>
 </div> -->
-<div class="container mt-5 shadow">
+<div class="container mt-5 shadow" [formGroup]="form">
   <div class="col-12 d-flex justify-content-center">
     <atom-input
       labelText=""
@@ -79,8 +79,8 @@
           : this.expresion?.value
       "
       type="text"
-      formControlName="expresion2"
-      [disabled]="true"
+      formControlName="expresion"
+      [disabled]="isLoading != null"
       customClass="form-control my-4 input-lg"
     ></atom-input>
   </div>
