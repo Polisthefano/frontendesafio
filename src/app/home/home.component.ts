@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   calcular() {
-    if (this.expresion?.valid) {
+    if (this.expresion?.valid && this.expresion.value.trim() != '') {
       this.withPOST();
       this.withGET();
     }
