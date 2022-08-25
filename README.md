@@ -1,27 +1,50 @@
 # Frontenddesafio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Desafio con una api rest
 
-## Development server
+# Frontenddesafio -> Angular FrontEnd
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Descripción
 
-## Code scaffolding
+Front end con
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **URL**= https://frontenddesafio.herokuapp.com/
 
-## Build
+## Guía de inicio
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para obtener una copia del proyecto se deberá hacer click en el botón "Clonar" y copiar la dirección ssh o https dependiendo si se tiene una clave ssh vinculada con el proyecto o no. Ejemplo de una dirección https es: "https://github.com/Polisthefano/APIRESTDESAFIO.git". Luego, se deberá clonar el proyecto con el comando "git clone + la dirección https copiada", luego hay que abrir una terminal en la dirección del proyecto, ejecutar "git checkout + el nombre de la rama a la que se quiere ir".
 
-## Running unit tests
+Instalar dependencias:
+npm i
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Correr el servidor accesible desde localhost
+ng s
 
-## Running end-to-end tests
+## Requisitos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para poder ver la librería se necesitará tener instalado Git para poder clonarse el proyecto.
 
-## Further help
+### Utilización de la UI
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para utilizar la interfaz de usuario, debemos mediante clicks confeccionar la expresion que deseamos calcular, esta expresion, tambien puede ser escrita de forma manual por el usuario seleccionando en el campo que dice "Construye tu expresión". Una vez que la expresion ya esta lista, mediante el boton igual "=" se calcula y esta interfaz arroja el resultado.
+
+## Herramientas
+
+### Desarrollo
+
+- [ANGULAR](https://angular.io/) v14.1.3 o superior
+- [Postman](https://www.postman.com/)
+
+## Versionado
+
+Versionado Semántico 1.0.0
+
+Dado un número de versión MAYOR.MENOR.PARCHE, se incrementa:
+la versión MAYOR cuando realizas un cambio incompatible en el API,
+la versión MENOR cuando añades funcionalidad que compatible con versiones anteriores, y
+la versión PARCHE cuando reparas errores compatibles con versiones anteriores.
+Para tags de git utilizar **v**MAYOR.MENOR.PARCHE (ejemplo v1.1.0), para versionado de docker imagen utilizar MAYOR.MENOR.PARCHE (ejemplo 1.1.0).
+
+## Autores
+
+Sthefano Politino
