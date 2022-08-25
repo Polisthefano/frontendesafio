@@ -6,8 +6,15 @@ box-shadow:  26px 26px 53px #d9d9d9,
 }
 .shadowCalculator{
 
-border-radius: 50px;
-background: #ffffff;
-box-shadow:  20px 20px 50px #d9d9d9,
-             -20px -20px 50px #ffffff;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #e3e3e3, #fbfbfb);
+  box-shadow:  19px 19px 37px #9f9f9f,
+               -19px -19px 37px #ffffff;
+}
+
+.shadowButton{
+  border-radius: 0px;
+background: #ededed;
+box-shadow: inset 21px 21px 29px #d3d3d3,
+            inset -21px -21px 29px #ffffff;
 }
