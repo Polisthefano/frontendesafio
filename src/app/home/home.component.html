@@ -6,7 +6,10 @@
   </div>
 </div>
 
-<div class="container-fluid mt-5 shadow" [formGroup]="form">
+<div
+  class="container-fluid mt-5 shadow animate__animated animate__fadeIn"
+  [formGroup]="form"
+>
   <div class="col-12 d-flex justify-content-center">
     <atom-input
       labelText=""
@@ -89,7 +92,9 @@
     <ng-container *ngIf="historial.length > 0; else ELSE">
       <h5 *ngFor="let busqueda of historial; let i = index">
         Expresion calculada numero {{ i + 1 }}:
-        <span class="ms-2" style="font-weight: bold">{{ busqueda }}</span>
+        <span class="ms-2 textBold">{{ busqueda.expresion }}</span
+        >, resultado obtenido:
+        <span class="textBold">{{ busqueda.resultado }}</span>
       </h5>
     </ng-container>
     <ng-template #ELSE>

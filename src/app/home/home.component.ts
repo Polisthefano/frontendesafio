@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     Post: null,
     Get: null,
   };
-  historial: string[] = [];
+  historial: { resultado: string; expresion: string }[] = [];
   isLoading: method | null = null;
   form: FormGroup = new FormGroup({
     expresion: new FormControl('', [Validators.required]),
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
       .then((resp: any) => {
         this.isLoading = null;
         this.resultado.Post = resp.resultado == null ? 'nulo' : resp.resultado;
-        this.cargarHistorial();
+        this.cargarHistorial(this.resultado.Post);
       })
       .catch((err) => {
         console.error(err);
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
       .then((resp: any) => {
         this.isLoading = null;
         this.resultado.Get = resp.resultado == null ? 'nulo' : resp.resultado;
-        this.cargarHistorial();
+        this.cargarHistorial(this.resultado.Get);
       })
       .catch((err) => {
         console.error(err);
@@ -123,9 +123,9 @@ export class HomeComponent implements OnInit {
         this.expresion?.setValue(expresionActual + data.value);
     }
   }
-  cargarHistorial() {
-    if (!this.historial.includes(this.expresion?.value)) {
-      this.historial.push(this.expresion?.value);
+  cargarHistorial(resultado: any) {
+    if (!this.historial.some((h) => h.expresion == this.expresion?.value)) {
+      this.historial.push({ expresion: this.expresion?.value, resultado });
     }
   }
 }
