@@ -9,6 +9,28 @@ import { HomeService, method } from './services/home.service';
   providers: [HomeService],
 })
 export class HomeComponent implements OnInit {
+  classIcons: Array<{ class: string; value: string }> = [
+    { class: 'ri-eraser-line  ri-1x', value: 'deleteAll' },
+    { class: 'ri-percent-line  ri-1x', value: '%' },
+    { class: 'ri-delete-back-2-line  ri-1x', value: 'deleteLast' },
+    { class: 'ri-divide-fill  ri-1x', value: '/' },
+    { class: 'ri-number-7  ri-1x', value: '7' },
+    { class: 'ri-number-8  ri-1x', value: '8' },
+    { class: 'ri-number-9  ri-1x', value: '9' },
+    { class: 'ri-close-line ri-1x', value: 'x' },
+    { class: 'ri-number-4  ri-1x', value: '4' },
+    { class: 'ri-number-5  ri-1x', value: '5' },
+    { class: 'ri-number-6  ri-1x', value: '6' },
+    { class: 'ri-subtract-line  ri-1x', value: '-' },
+    { class: 'ri-number-1  ri-1x', value: '1' },
+    { class: 'ri-number-2  ri-1x', value: '2' },
+    { class: 'ri-number-3  ri-1x', value: '3' },
+    { class: 'ri-add-fill  ri-1x', value: '+' },
+    { class: 'ri-checkbox-blank-circle-fill  ri-1x', value: '.' },
+    { class: 'ri-number-0  ri-1x', value: '0' },
+    { class: 'ri-history-line  ri-1x', value: 'history' },
+    { class: 'ri-calculator-line  ri-1x', value: 'result' },
+  ];
   resultado: { resultadoPost: number | null; resultadoGet: number | null } = {
     resultadoPost: null,
     resultadoGet: null,
@@ -74,5 +96,26 @@ export class HomeComponent implements OnInit {
   }
   get expresion2() {
     return this.form.get('expresion2');
+  }
+  armarExpresion(data: { class: string; value: string }) {
+    let expresionActual = this.expresion?.value;
+    switch (data.value) {
+      case 'deleteAll':
+        this.expresion?.setValue('');
+        break;
+      case 'deleteLast':
+        this.expresion?.setValue(
+          expresionActual.substring(0, expresionActual.length - 1)
+        );
+        break;
+      case 'history':
+        break;
+      case 'result':
+        this.calcular(true);
+        break;
+      default:
+        this.expresion?.setValue(expresionActual + data.value);
+    }
+    console.log(this.expresion?.value);
   }
 }
